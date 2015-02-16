@@ -41,7 +41,7 @@ Especially useful for Vagrant.
 			  "app" => "app2",
 			  "path" => "/var/www/app2",
 			  "server_name" => "app2.local",
-			  "server_alias" => [ "www.app2.local", "www2.app2.loca" ],
+			  "server_alias" => [ "www.app2.local", "www2.app2.local" ],
 			  "server_email" => "serveremail@app2.com"	
 			}
 		]	
