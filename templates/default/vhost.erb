@@ -1,17 +1,24 @@
 <VirtualHost *:80>
    ServerName <%= @params[:server_name] %>
-   <%= "ServerAlias #{@params[:server_alias]}" if @params[:server_alias]%>
+   <% if @params[:server_alias] -%>
+   <% @params[:server_alias].each do |server_alias| -%>
+   ServerAlias <%= server_alias %>
+   <% end -%>
+   <% end -%>
    <%= "ServerAdmin #{@params[:server_email]}" if @params[:server_email]%>
-   
+
    DocumentRoot <%= @params[:docroot] %>
-    
+
    <Directory <%= @params[:docroot] %>>
       Options Indexes FollowSymLinks MultiViews
       AllowOverride ALL
       Order allow,deny
       Allow from all
    </Directory>
-  
-   ErrorLog ${APACHE_LOG_DIR}/<%= @params[:server_name] %>.log
+
+   CustomLog <%= @params[:log_path] %>/access.log combined
+   ServerSignature On
+   ErrorLog <%= @params[:log_path] %>/error.log
    LogLevel debug
 </VirtualHost>
+

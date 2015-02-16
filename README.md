@@ -15,7 +15,7 @@ Especially useful for Vagrant.
 			:path=>"/var/www/app1",
 			:server_name=>"app1.local",
 			:server_email=>"serveremail@app1.com"
-			:server_alias=>"www.app1.local"
+			:server_alias=>["www.app1.local", "www1.app1.local"]
 		},
 		{
 			:app=>"app2",
@@ -34,15 +34,15 @@ Especially useful for Vagrant.
 			  "app" => "app1",
 			  "path" => "/var/www/app1",
 			  "server_name" => "app1.local",
-			  "server_alias" => "serveremail@app1.com",
-			  "server_email" => "www.app1.local"	
+			  "server_alias" => [ "www.app1.local", "www1.app1.local" ],
+			  "server_email" => "serveremail@app1.com"	
 			},
 			{
 			  "app" => "app2",
 			  "path" => "/var/www/app2",
 			  "server_name" => "app2.local",
-			  "server_alias" => "serveremail@app2.com",
-			  "server_email" => "www.app2.local"	
+			  "server_alias" => [ "www.app2.local", "www2.app2.loca" ],
+			  "server_email" => "serveremail@app2.com"	
 			}
 		]	
 

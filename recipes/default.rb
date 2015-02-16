@@ -8,6 +8,6 @@ node['apache_vhosts'].each do |vhost|
                 docroot "#{vhost['path']}"
                 server_name "#{vhost['server_name']}"
                 server_email "#{vhost['server_email']}"
-                server_alias "#{vhost['server_alias']}"
+                server_alias vhost['server_alias']
         end
 end
